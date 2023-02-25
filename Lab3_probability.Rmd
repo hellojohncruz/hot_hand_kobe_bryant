@@ -63,7 +63,7 @@ Within the nine shot attempts, there are six streaks, which are separated by a "
 1.  What does a streak length of 1 mean, i.e. how many hits and misses are in a 
     streak of 1? What about a streak length of 0?
     
-    - A streak length of 1 means one shot was made, followed by a missed shot. When 0, it means it was a missed shot, so no     streak was started. 
+    A streak length of 1 means one shot was made, followed by a missed shot. When 0, it means it was a missed shot, so no      streak was started. 
 
 Counting streak lengths manually for all 133 shots would get tedious, so we'll use the custom function `calc_streak` to calculate them, and store the results in a data frame called `kobe_streak` as the `length` variable.
 
@@ -83,7 +83,7 @@ ggplot(data = kobe_streak, aes(x = length)) +
     What was his typical streak length? How long was his longest streak of 
     baskets? Make sure to include the accompanying plot in your answer.
     
-    - The distribution is right-skewed. Kobe's typical streak length was predominantly between 0 and 1. His longest streak     was 4 consecutive baskets before missing a shot. 
+    The distribution is right-skewed. Kobe's typical streak length was predominantly between 0 and 1. His longest streak       was 4 consecutive baskets before missing a shot. 
 
 ## Compared to What?
 

@@ -1698,11 +1698,9 @@ zero (in order of occurrence).</p>
 <ol style="list-style-type: decimal">
 <li><p>What does a streak length of 1 mean, i.e. how many hits and
 misses are in a streak of 1? What about a streak length of 0?</p>
-<ul>
-<li>A streak length of 1 means one shot was made, followed by a missed
+<p>A streak length of 1 means one shot was made, followed by a missed
 shot. When 0, it means it was a missed shot, so no streak was
-started.</li>
-</ul></li>
+started.</p></li>
 </ol>
 <p>Counting streak lengths manually for all 133 shots would get tedious,
 so we’ll use the custom function <code>calc_streak</code> to calculate
@@ -1720,11 +1718,9 @@ lengths.</p>
 NBA finals. What was his typical streak length? How long was his longest
 streak of baskets? Make sure to include the accompanying plot in your
 answer.</p>
-<ul>
-<li>The distribution is right-skewed. Kobe’s typical streak length was
+<p>The distribution is right-skewed. Kobe’s typical streak length was
 predominantly between 0 and 1. His longest streak was 4 consecutive
-baskets before missing a shot.</li>
-</ul></li>
+baskets before missing a shot.</p></li>
 </ol>
 </div>
 </div>
@@ -1780,7 +1776,7 @@ those rules. As a simple example, you can simulate flipping a fair coin
 with the following.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>coin_outcomes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;heads&quot;</span>, <span class="st">&quot;tails&quot;</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(coin_outcomes, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;heads&quot;</code></pre>
+<pre><code>## [1] &quot;tails&quot;</code></pre>
 <p>The vector <code>coin_outcomes</code> can be thought of as a hat with
 two slips of paper in it: one slip says <code>heads</code> and the other
 says <code>tails</code>. The function <code>sample</code> draws one slip
@@ -1800,22 +1796,22 @@ heads and tails in a new object called <code>sim_fair_coin</code>.</p>
 and then use <code>table</code> to count up the number of heads and
 tails.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sim_fair_coin</span></code></pre></div>
-<pre><code>##   [1] &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot;
-##  [10] &quot;heads&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot;
-##  [19] &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot;
-##  [28] &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot;
-##  [37] &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot;
-##  [46] &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot;
-##  [55] &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot;
-##  [64] &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot;
-##  [73] &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;tails&quot; &quot;heads&quot; &quot;tails&quot; &quot;heads&quot;
-##  [82] &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot;
-##  [91] &quot;tails&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot;
-## [100] &quot;tails&quot;</code></pre>
+<pre><code>##   [1] &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot;
+##  [10] &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;heads&quot; &quot;tails&quot;
+##  [19] &quot;heads&quot; &quot;tails&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot;
+##  [28] &quot;tails&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;tails&quot; &quot;heads&quot;
+##  [37] &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot;
+##  [46] &quot;heads&quot; &quot;tails&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot;
+##  [55] &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot;
+##  [64] &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot;
+##  [73] &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot;
+##  [82] &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot;
+##  [91] &quot;tails&quot; &quot;tails&quot; &quot;tails&quot; &quot;heads&quot; &quot;heads&quot; &quot;heads&quot; &quot;tails&quot; &quot;tails&quot; &quot;tails&quot;
+## [100] &quot;heads&quot;</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(sim_fair_coin)</span></code></pre></div>
 <pre><code>## sim_fair_coin
 ## heads tails 
-##    52    48</code></pre>
+##    47    53</code></pre>
 <p>Since there are only two elements in <code>coin_outcomes</code>, the
 probability that we “flip” a coin and it lands heads is 0.5. Say we’re
 trying to simulate an unfair coin that we know only lands heads 20% of
