@@ -83,7 +83,7 @@ ggplot(data = kobe_streak, aes(x = length)) +
     What was his typical streak length? How long was his longest streak of 
     baskets? Make sure to include the accompanying plot in your answer.
     
-> The distribution is right-skewed. Kobe's typical streak length was predominantly between 0 and 1. His longest streak       was 4 consecutive baskets before missing a shot. 
+> The distribution is right-skewed. Kobe's typical streak length was 1. His longest streak was 4 consecutive baskets before missing a shot. 
 
 ## Compared to What?
 
@@ -230,7 +230,7 @@ colnames(sim_streak) <- c('length')
     How long is the player's longest streak of baskets in 133 shots? Make sure
     to include a plot in your answer.
     
-> The longest streak of baskets is 6. 
+> The distribution of our simulated shooter is right-skewed. The typical streak legnth is 1. The longest streak of baskets is 6. 
     
 ```{r sim-streak-distribution}
 ggplot(data = sim_streak, aes(length)) +
@@ -243,11 +243,28 @@ ggplot(data = sim_streak, aes(length)) +
     from the question above? Exactly the same? Somewhat similar? Totally 
     different? Explain your reasoning.
     
-
+> I would expect the distribution to be similarly right-skewed. The longest streak of baskets may change, but the typical streak will be 1.  
 
 8.  How does Kobe Bryant's distribution of streak lengths compare to the 
     distribution of streak lengths for the simulated shooter? Using this 
     comparison, do you have evidence that the hot hand model fits Kobe's 
     shooting patterns? Explain.
+    
+> Both distributions of Kobe's and the simulated shooter are similarly right-skewed. We do not have evidence that Kobe has a hot hand given that in general he either made the shot or missed, while occasionally going on a shooting streak. 
+
+```{r boxplot}
+kobe_streak$player <- 'kobe'
+sim_streak$player <- 'sim'
+
+combine_streaks <- rbind(kobe_streak, sim_streak)
+
+ggplot(combine_streaks, aes(x = length, y = player, color = player)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.2)
+
+ggplot(combine_streaks, aes(x = length, y = player)) +
+  geom_point()
+
+```
 
 * * *
