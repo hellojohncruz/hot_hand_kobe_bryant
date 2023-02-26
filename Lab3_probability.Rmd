@@ -250,7 +250,7 @@ ggplot(data = sim_streak, aes(length)) +
     comparison, do you have evidence that the hot hand model fits Kobe's 
     shooting patterns? Explain.
     
-> Both distributions of Kobe's and the simulated shooter are similarly right-skewed. We do not have evidence that Kobe has a hot hand given that in general he either made the shot or missed, while occasionally going on a shooting streak. 
+> Both distributions of Kobe's and the simulated shooter are similarly right-skewed. We do not have evidence that Kobe has a hot hand given that in general he either made the shot or missed, while occasionally going on a longer shooting streak similarly to our simulated player. 
 
 ```{r boxplot}
 kobe_streak$player <- 'kobe'
@@ -258,12 +258,11 @@ sim_streak$player <- 'sim'
 
 combine_streaks <- rbind(kobe_streak, sim_streak)
 
-ggplot(combine_streaks, aes(x = length, y = player, color = player)) +
-  geom_boxplot() +
-  geom_jitter(width = 0.2)
-
-ggplot(combine_streaks, aes(x = length, y = player)) +
-  geom_point()
+ggplot(combine_streaks, aes(x = length, fill = player)) +
+  geom_histogram(bins = 6, position = 'identity', alpha = 0.25) +
+  geom_density(aes(y = after_stat(count), color = player), alpha = 0) +
+  scale_fill_manual(values = c('red', 'blue')) +
+  scale_color_brewer(palette = 'Set1')
 
 ```
 
